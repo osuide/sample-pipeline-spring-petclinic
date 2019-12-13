@@ -23,5 +23,12 @@ pipeline {
         }
       }
     }
-  }
+    stage('Run local Container') {
+           agent any
+           steps {
+               sh 'docker rm -f petclinic:${TAG} || true'
+               sh "docker run -d --network=bridge --name petclinic osuide/petclinic:${TAG}"
+           }
+    }
+}
 }

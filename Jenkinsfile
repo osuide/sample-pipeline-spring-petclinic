@@ -33,7 +33,7 @@ pipeline {
                }
            }
            steps {
-               sh '/opt/sonar-runner-2.4/bin/sonar-runner'
+               sh '/opt/sonar-runner-${SONAR_RUNNER_VERSION}/bin/sonar-runner'
            }
        }
         stage('Selenium') {

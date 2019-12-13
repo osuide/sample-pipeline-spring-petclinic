@@ -22,7 +22,7 @@ pipeline {
                }
            }
            steps {
-               sh 'cp target/petclinic.war /usr/share/jenkins/ref/petclinic/petclinic.war'
+               sh 'cp target/petclinic.war /usr/share/jenkins/ref/tomcat/petclinic.war'
            }
        }
        stage('Sonar') {

@@ -33,7 +33,7 @@ pipeline {
                }
            }
            steps {
-               sh '/opt/sonar-runner-$SONAR_RUNNER_VERSION/bin/sonar-runner'
+               sh '/opt/sonarqube/bin/sonar-runner'
            }
        }
         stage('Selenium') {

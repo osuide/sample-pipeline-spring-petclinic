@@ -33,7 +33,7 @@ pipeline {
                }
            }
            steps {
-               sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -e -D sonar.prjectKey=PetClinic  -D sonar.projectKey=PetClinic -D sonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -D sonar.host.url=http://localhost:19000'
+               sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -e -D sonar.prjectKey=PetClinic  -D sonar.projectKey=PetClinic -D sonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -D sonar.host.url=http://localhost:9000'
            }
        }
         stage('Selenium') {

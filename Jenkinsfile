@@ -33,7 +33,7 @@ pipeline {
                }
            }
            steps {
-               sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -Dsonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -Dsonar.jdbc.url=${SONAR_DB_URL} -Dsonar.jdbc.username=${SONAR_DB_LOGIN} -Dsonar.jdbc.password=${SONAR_DB_PASSWORD} -Dsonar.host.url=http://localhost:19000'
+               sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -Dsonar.login="d86dd98a8743eaaef9241a195d07eb1cfb9bb18c" -Dsonar.jdbc.url=${SONAR_DB_URL} -Dsonar.jdbc.username=${SONAR_DB_LOGIN} -Dsonar.jdbc.password=${SONAR_DB_PASSWORD} -Dsonar.host.url=http://localhost:19000'
            }
        }
         stage('Selenium') {

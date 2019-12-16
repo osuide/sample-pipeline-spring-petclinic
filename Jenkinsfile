@@ -29,7 +29,7 @@ pipeline {
            agent  {
                docker {
                    image 'sonarqube'
-                   
+                   args '-e SONAR_ACCOUNT_LOGIN -e SONAR_ACCOUNT_PASSWORD -e SONAR_DB_URL -e SONAR_DB_LOGIN -e SONAR_DB_PASSWORD --network=demo-deployment-pipeline_default --entrypoint=""'
                }
            }
            steps {

@@ -47,7 +47,7 @@
     </properties>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/liatrio/spring-petclinic/</developerConnection>
+        <developerConnection>scm:git:https://github.com/liatrio/sample-pipeline-spring-petclinic.git/</developerConnection>
         <tag>spring-petclinic-1.0.0</tag>
     </scm>
 

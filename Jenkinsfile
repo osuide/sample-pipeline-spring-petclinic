@@ -26,7 +26,7 @@ pipeline {
            }
        }
        stage('Sonar') {
-           agent none
+           
             steps {
             Script(
                    [docker.image('osuide/sonar-scanner').inside('-v /var/run/docker.sock:/var/run/docker.sock --entrypoint=""').run]) {

@@ -5,13 +5,13 @@ pipeline {
            agent {
                docker {
                    image 'maven:3.5.0'
-                   args '--network=bridge'
+                   args '--network=demo-deployment-pipeline_default'
                }
            }
            steps {
                configFileProvider(
                        [configFile(fileId: 'nexus', variable: 'MAVEN_SETTINGS')]) {
-                   sh 'mvn -s $MAVEN_SETTINGS clean deploy -DskipTests=true -B'
+                   sh 'mvn -s $MAVEN_SETTINGS clean deploy "-DskipTests=true" -B'
                }
            }
        }
@@ -29,18 +29,18 @@ pipeline {
            agent  {
                docker {
                    image 'sebp/sonar-runner'
-                   args '--network=bridge --entrypoint="/bin/sh", "-c", "${SONAR_RUNNER_HOME}/bin/sonar-runner"'
+                   args '--network=demo-deployment-pipeline_default --entrypoint="/bin/sh", "-c", "${SONAR_RUNNER_HOME}/bin/sonar-runner"'
                }
            }
            steps {
-               sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -e -D sonar.prjectKey=PetClinic  -D sonar.projectKey=PetClinic -D sonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -D sonar.host.url=http://http://192.168.1.72:19000'
+               sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -e -D sonar.prjectKey=PetClinic  -D sonar.projectKey=PetClinic -D sonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -D sonar.host.url=http://http://localhost:19000'
            }
        }
         stage('Selenium') {
             agent {
                 docker {
                     image 'liatrio/selenium-firefox'
-                    args '--network=bridge'
+                    args '--network=demo-deployment-pipeline_default'
                 }
             }
             steps {

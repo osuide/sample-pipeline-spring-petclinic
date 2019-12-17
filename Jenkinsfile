@@ -28,7 +28,7 @@ pipeline {
        stage('Sonar') {
            agent  {
                docker {
-                   image 'sebp/sonar-runner'
+                   image 'osuide/sonar-scanner'
                    args '--network=demo-deployment-pipeline_default'
                }
            }

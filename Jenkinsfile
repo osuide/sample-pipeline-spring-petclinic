@@ -29,7 +29,7 @@ pipeline {
            agent { label 'docker'}
            steps {
             Script {
-                   docker.image('osuide/sonar-scanner').inside('--volume /var/run/docker.sock:/var/run/docker.sock --network=demo-deployment-pipeline_default --entrypoint=""') {
+                   docker.image('osuide/sonar-scanner').inside('--network=demo-deployment-pipeline_default --entrypoint=""') {
                    sh '/opt/sonar-runner-2.4/bin/sonar-runner -Dsonar.projectKey=PetClinic  -Dsonar.projectKey=PetClinic -Dsonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -Dsonar.host.url=http://172.19.0.5:19000' 
                  }
                }

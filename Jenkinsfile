@@ -26,9 +26,10 @@ pipeline {
            }
        }
        stage('Sonar') {
-           agent{
-               docker{
-                   image ('osuide/sonar-scanner').inside('-v /var/run/docker.sock:/var/run/docker.sock --network=demo-deployment-pipeline_default --entrypoint=""')
+           agent {
+               docker {
+                   image ('osuide/sonar-scanner').inside 
+                   args '-v /var/run/docker.sock:/var/run/docker.sock --network=demo-deployment-pipeline_default --entrypoint=""'
                  }
                }
            steps {

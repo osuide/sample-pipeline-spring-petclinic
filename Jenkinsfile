@@ -5,7 +5,7 @@ pipeline {
            agent {
                docker {
                    image 'maven:3.5.0'
-                   args '--network=demo-deployment-pipeline_default'
+                   args '--network=bridge'
                }
            }
            steps {
@@ -29,7 +29,7 @@ pipeline {
            agent  {
                docker {
                    image 'sebp/sonar-runner'
-                   args '--network=demo-deployment-pipeline_default --entrypoint=["/bin/sh", "-c", "${SONAR_RUNNER_HOME}/bin/sonar-runner"]'
+                   args '--network=bridge --entrypoint="/bin/sh", "-c", "${SONAR_RUNNER_HOME}/bin/sonar-runner"'
                }
            }
            steps {
@@ -40,7 +40,7 @@ pipeline {
             agent {
                 docker {
                     image 'liatrio/selenium-firefox'
-                    args '--network=demo-deployment-pipeline_default'
+                    args '--network=bridge'
                 }
             }
             steps {

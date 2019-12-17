@@ -29,7 +29,8 @@ pipeline {
            agent  {
                docker {
                    image 'sebp/sonar-runner'
-                   args '--network=demo-deployment-pipeline_default --entrypoint="/opt/sonar-runner-2.4/bin/sonar-runner"'
+                   entrypoint: ['']
+                   args '--network=demo-deployment-pipeline_default'
                }
            }
            steps {

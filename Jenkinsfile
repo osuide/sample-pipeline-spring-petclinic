@@ -34,7 +34,7 @@ pipeline {
            }
             steps {
 
-                   sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -e -Dsonar.projectKey=petclinic -Dsonar.login=bb00823a462ee3c500019e28ebfcca1b480ba5fe -Dsonar.host.url=http://host.docker.internal:19000'
+                   sh '/opt/sonar-runner-2.4/bin/sonar-runner -X -Dsonar.projectKey=petclinic -Dsonar.login=bb00823a462ee3c500019e28ebfcca1b480ba5fe -Dsonar.host.url=http://host.docker.internal:19000'
                  }
                }
 

@@ -26,15 +26,18 @@ pipeline {
            }
        }
        stage('Sonar') {
-           
+           agent  {
+               docker {
+                   image 'sebp/sonar-runner'
+                   args '--network=demo-deployment-pipeline_default'
+               }
+           }
             steps {
-            Script(
-                   docker.image(&apos;osuide/sonar-scanner&apos;).inside {
 
-                   sh &apos;/opt/sonar-runner-2.4/bin/sonar-runner -Dsonar.projectKey=PetClinic  -Dsonar.projectKey=PetClinic -Dsonar.login=d86dd98a8743eaaef9241a195d07eb1cfb9bb18c -Dsonar.host.url=http://localhost:19000&apos;
+                   sh '/opt/sonar-runner-2.4/bin/sonar-runner -Dsonar.projectKey=petclinic -Dsonar.login=c430c1a9010b99d5ff19947e6b09d457feeb794f -Dsonar.host.url=http://host.docker.internal:19000'
                  }
-               }}
-    
+               }
+
         stage('Selenium') {
             agent {
                 docker {

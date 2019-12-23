@@ -34,7 +34,7 @@ pipeline {
            }
             steps {
 
-                   sh 'sonar-scanner -X -Dsonar.jdbc.url=jdbc:h2:tcp://host.docker.internal/sonar -Dsonar.embeddedDatabase.port=9092 -Dsonar.jdbc.driverClassName=org.h2.Driver -Dsonar.projectKey=petclinic -Dsonar.login=c06396bbd97f0f5d39b50dea95a1f80d0f164f2f -Dsonar.host.url=http://host.docker.internal:19000'
+                   sh '/opt/sonar-scanner/bin/sonar-runner -X -Dsonar.jdbc.url=jdbc:h2:tcp://host.docker.internal/sonar -Dsonar.embeddedDatabase.port=9092 -Dsonar.jdbc.driverClassName=org.h2.Driver -Dsonar.projectKey=petclinic -Dsonar.login=c06396bbd97f0f5d39b50dea95a1f80d0f164f2f -Dsonar.host.url=http://host.docker.internal:19000'
                  }
                }
 

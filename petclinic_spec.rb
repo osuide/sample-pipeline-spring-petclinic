@@ -8,7 +8,7 @@ describe 'Petlinic' do
     @headless.start
 
     @driver = Selenium::WebDriver.for :firefox
-    @driver.navigate.to 'http://host.docker.internal:18888/petclinic'
+    @driver.navigate.to 'http://tomcat:8888/petclinic'
     @driver.manage.timeouts.implicit_wait = 30
   end
 

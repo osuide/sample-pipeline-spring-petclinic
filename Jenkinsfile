@@ -34,7 +34,7 @@ pipeline {
            }
             steps {
 
-                   sh '/opt/sonar-scanner/bin/sonar-scanner <ENTER SONAR PROJECT PROPERTIES HERE>'
+                   sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=petclinic -Dsonar.login=dde935ac21d85c1452c49c1e50eb2e12d7fb8f12'
                  }
                }
 

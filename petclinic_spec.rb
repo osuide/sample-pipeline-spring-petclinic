@@ -48,7 +48,7 @@ describe 'Petclinic' do
       # grab H2 content
       h2 = @driver.find_element(:tag_name, 'h2').text
 
-      assert h2 == 'Vets'
+      assert h2 == 'Veterinarians'
     end
   end
 

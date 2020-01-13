@@ -5,7 +5,7 @@ pipeline {
            agent {
                docker {
                    image 'maven:3.5.0'
-                   args '--network=demo-deployment-pipeline_default'
+                   
                }
            }
            steps {

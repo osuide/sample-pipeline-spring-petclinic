@@ -34,7 +34,7 @@ pipeline {
            }
             steps {
 
-                   sh '/opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=petclinic -Dsonar.login=1a68b418420076d4f5e99d0debb3491c226acd45 -Dsonar.host.url=http://sonar:9000 -Dsonar.java.binaries=/bin'
+                   sh '/opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=petclinic -Dsonar.login=7c8b33f31e0b98e462d3e9be57bee864e09db8f7 -Dsonar.host.url=http://sonar:9000 -Dsonar.java.binaries=/bin'
                  }
                }
 

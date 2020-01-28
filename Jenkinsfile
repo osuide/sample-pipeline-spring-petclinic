@@ -5,7 +5,7 @@ pipeline {
            agent {
                docker {
                    image 'maven:3.5.0'
-                   args '--network=sf_vmshared_default'
+                   args '--network=demo-deployment-pipeline_default'
                }
            }
            steps {
@@ -29,7 +29,7 @@ pipeline {
            agent  {
                docker {
                    image 'sonarsource/sonar-scanner-cli'
-                   args '--network=sf_vmshared_default --entrypoint=""'
+                   args '--network=demo-deployment-pipeline_default --entrypoint=""'
                }
            }
             steps {
@@ -42,7 +42,7 @@ pipeline {
             agent {
                 docker {
                     image 'liatrio/selenium-firefox'
-                    args '--network=sf_vmshared_default'
+                    args '--network=demo-deployment-pipeline_default'
                 }
             }
             steps {
